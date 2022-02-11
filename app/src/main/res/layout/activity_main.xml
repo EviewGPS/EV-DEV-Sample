@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="30dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="V1.3"
+        android:textColor="#FF0000" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/shutdown"
+            android:layout_width="227px"
+            android:layout_height="wrap_content"
+            android:text="Shutdown" />
+
+        <Button
+            android:id="@+id/trigger_connect"
+            android:layout_width="227px"
+            android:layout_height="wrap_content"
+            android:text="Connect" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/start_hrs"
+            android:layout_width="227px"
+            android:layout_height="wrap_content"
+            android:text="Start HR" />
+
+        <Button
+            android:id="@+id/stop_hrs"
+            android:layout_width="227px"
+            android:layout_height="wrap_content"
+            android:text="Stop HR" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/enable_gesture"
+            android:layout_width="227px"
+            android:layout_height="wrap_content"
+            android:text="Gesture Enable" />
+
+        <Button
+            android:id="@+id/disable_gesture"
+            android:layout_width="227px"
+            android:layout_height="wrap_content"
+            android:text="Disable" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_hrs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="HR:Unknown"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/txt_step_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Step:Unknown"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
