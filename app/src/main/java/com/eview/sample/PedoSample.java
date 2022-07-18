@@ -49,8 +49,12 @@ public class PedoSample {
     };
 
     public void start(Context context, TextView textView) {
-        mContentResolver = context.getContentResolver();
-        mContentResolver.registerContentObserver(eCareSettings.StepCount.CONTENT_SHARE_DATA_URI, false, mObserver);
+        try {
+            mContentResolver = context.getContentResolver();
+            mContentResolver.registerContentObserver(eCareSettings.StepCount.CONTENT_SHARE_DATA_URI, false, mObserver);
+        }catch (SecurityException e) {
+            e.printStackTrace();
+        }
         this.textView = textView;
     }
 

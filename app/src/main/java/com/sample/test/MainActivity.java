@@ -12,10 +12,12 @@ import android.widget.TextView;
 
 import com.eview.PhoneSystem;
 import com.eview.sample.AlertSample;
+import com.eview.sample.AlertSettings;
 import com.eview.sample.ConnectionTrigger;
 import com.eview.sample.GestureSample;
 import com.eview.sample.HrsSample;
 import com.eview.sample.KeySample;
+import com.eview.sample.LedSample;
 import com.eview.sample.PedoSample;
 
 public class MainActivity extends Activity {
@@ -87,6 +89,80 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 GestureSample.setGesture(MainActivity.this, false);
+            }
+        });
+        button = (Button)findViewById(R.id.set_falldown);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.setFalldown(true, true, 6);
+            }
+        });
+        button = (Button)findViewById(R.id.query_falldown);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.queryFalldownSettings();
+            }
+        });
+
+        button = (Button)findViewById(R.id.set_tilt);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.setTilt(true, true, 30, 30);
+            }
+        });
+        button = (Button)findViewById(R.id.query_tilt);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.queryTiltSettings();
+            }
+        });
+
+        button = (Button)findViewById(R.id.set_motion);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.setMotion(true, true, 4, 45);
+            }
+        });
+        button = (Button)findViewById(R.id.query_motion);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.queryMotionSettings();
+            }
+        });
+
+        button = (Button)findViewById(R.id.set_nomotion);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.setNoMotion(true, true, 60);
+            }
+        });
+        button = (Button)findViewById(R.id.query_nomotion);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.queryNoMotionSettings();
+            }
+        });
+
+        button = (Button)findViewById(R.id.set_off_ecare_led);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LedSample.setECareControl(false);
+            }
+        });
+        button = (Button)findViewById(R.id.set_led_status);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LedSample.setLed(LedSample.LED_STATE_ON,LedSample.LED_STATE_ON,LedSample.LED_STATE_ON,LedSample.LED_BR_STATE_BR_DD);
             }
         });
 
