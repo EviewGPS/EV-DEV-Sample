@@ -11,20 +11,20 @@ import com.eview.ecare.eCareServiceInterface;
 * */
 public class LedSample {
     //led state mode
-    public static final int LED_STATE_OFF = 0;//0-	关闭
-    public static final int LED_STATE_ON = 1;//1-	长亮
-    public static final int LED_STATE_525 = 2;//2-	亮500ms灭2500ms，周期运行
-    public static final int LED_STATE_129 = 3;//3-	亮100ms灭2900ms，周期运行
-    public static final int LED_STATE_13125 = 4;//4-	亮100ms灭300ms亮100ms灭2500ms，周期运行
-    public static final int LED_STATE_327 = 5;//5-	亮300ms灭2700ms，周期运行
-    public static final int LED_STATE_129_x = 6;//6-	亮100ms灭2900ms，周期运行
-    public static final int LED_STATE_1020 = 7;//7-	亮1000ms灭2000ms，周期运行
-    public static final int LED_STATE_1_0s = 8;//8-	亮100灭～
-    public static final int LED_STATE_131_0s = 9;//9-	亮100ms灭300ms亮100ms灭～
-    public static final int LED_STATE_13131_0s = 10;//10-	亮100ms灭300ms亮100ms灭300ms亮100ms灭～
-    public static final int LED_STATE_1313131_0s = 11;//11-	亮100ms灭300ms亮100ms灭300ms亮100ms灭300ms亮100ms灭～
-    public static final int LED_STATE_131313131_0s = 12;//12-	亮100ms灭300ms亮100ms灭300ms亮100ms灭300ms亮100ms灭300ms亮100ms灭～
-    public static final int LED_STATE_11 = 14;//14- 亮100ms灭100ms周期运行
+    public static final int LED_STATE_OFF = 0;//0-	OFF
+    public static final int LED_STATE_ON = 1;//1-	ON
+    public static final int LED_STATE_525 = 2;//2-	ON 500ms, OFF 2500ms，Repeat
+    public static final int LED_STATE_129 = 3;//3-	ON 100ms,OFF 2900ms，Repeat
+    public static final int LED_STATE_13125 = 4;//4-	ON 100ms, OFF 300ms, ON 100ms, OFF 2500ms，repeat
+    public static final int LED_STATE_327 = 5;//5-	ON 300ms, OFF 2700ms，repeat
+    public static final int LED_STATE_129_x = 6;//6-	ON 100ms, OFF 2900ms，repeat
+    public static final int LED_STATE_1020 = 7;//7-	ON 1000ms, OFF 2000ms，repeat
+    public static final int LED_STATE_1_0s = 8;//8-	ON 100ms, OFF～
+    public static final int LED_STATE_131_0s = 9;//9-	ON 100ms, OFF 300ms, ON 100ms, OFF～
+    public static final int LED_STATE_13131_0s = 10;//10-	ON 100ms, OFF 300ms, ON 100ms, OFF 300ms, ON 100ms, OFF～
+    public static final int LED_STATE_1313131_0s = 11;//11-	ON 100ms, OFF 300ms, ON 100ms, OFF 300ms, ON 100ms, OFF 300ms, ON 100ms, OFF～
+    public static final int LED_STATE_131313131_0s = 12;//12-	ON 100ms, OFF 300ms, ON 100ms, OFF 300ms, ON 100ms, OFF 300ms, ON 100ms, OFF 300ms, ON 100ms, OFF～
+    public static final int LED_STATE_11 = 14;//14- ON 100ms, OFF 100ms, repeat
 
     public static final int LED_BR_STATE_B_D = 0x0d;//breath <SOS button led only>
     public static final int LED_BR_STATE_R_D = 0xd0;//breath <SOS button led only>
