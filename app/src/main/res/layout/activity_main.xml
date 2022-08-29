@@ -20,8 +20,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="V1.5"
+            android:text="V1.6"
             android:textColor="#FF0000" />
+
+        <TextView
+            android:id="@+id/txt_step_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Step:Unknown"
+            android:textColor="#FFFFFF" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_gravity="center"
@@ -41,150 +50,320 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/start_hrs"
-                android:layout_width="227px"
-                android:layout_height="wrap_content"
-                android:text="Start HR" />
-
-            <Button
-                android:id="@+id/stop_hrs"
-                android:layout_width="227px"
-                android:layout_height="wrap_content"
-                android:text="Stop HR" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/enable_gesture"
-                android:layout_width="227px"
-                android:layout_height="wrap_content"
-                android:text="Gesture Enable" />
-
-            <Button
-                android:id="@+id/disable_gesture"
-                android:layout_width="227px"
-                android:layout_height="wrap_content"
-                android:text="Disable" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/set_falldown"
-                android:layout_width="227px"
-                android:layout_height="wrap_content"
-                android:text="Fall update" />
-
-            <Button
-                android:id="@+id/query_falldown"
-                android:layout_width="227px"
-                android:layout_height="wrap_content"
-                android:text="Fall Query" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/set_tilt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tilt update" />
-
-            <Button
-                android:id="@+id/query_tilt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tilt Query" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/set_motion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Motion update" />
-
-            <Button
-                android:id="@+id/query_motion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Motion Query" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/set_nomotion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NoMotion update" />
-
-            <Button
-                android:id="@+id/query_nomotion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NoMotion Query" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/set_off_ecare_led"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LED Off eCare" />
-
-            <Button
-                android:id="@+id/set_led_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LED Set" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/txt_hrs"
-            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="HR:Unknown"
-            android:textColor="#FFFFFF" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#3C3C36">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Heart test"
+                android:textColor="#FFFFFF"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/start_hrs"
+                    android:layout_width="227px"
+                    android:layout_height="wrap_content"
+                    android:text="Start" />
 
-        <TextView
-            android:id="@+id/txt_step_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                <Button
+                    android:id="@+id/stop_hrs"
+                    android:layout_width="227px"
+                    android:layout_height="wrap_content"
+                    android:text="Stop" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_hrs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="HR:Unknown"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_gravity="center"
-            android:text="Step:Unknown"
-            android:textColor="#FFFFFF" />
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#3C3C36">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Gesture settings"
+                android:textColor="#FFFFFF"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/enable_gesture"
+                    android:layout_width="227px"
+                    android:layout_height="wrap_content"
+                    android:text="Enable" />
+
+                <Button
+                    android:id="@+id/disable_gesture"
+                    android:layout_width="227px"
+                    android:layout_height="wrap_content"
+                    android:text="Disable" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#3C3C36">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Fall alert settings"
+                android:textColor="#FFFFFF"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/set_falldown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update" />
+
+                <Button
+                    android:id="@+id/query_falldown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Query" />
+
+                <ToggleButton
+                    android:id="@+id/set_fall_ecare_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:textOff="Disable"
+                    android:textOn="Enable"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#3C3C36">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Tilt alert settings"
+                android:textColor="#FFFFFF"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/set_tilt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update" />
+
+                <Button
+                    android:id="@+id/query_tilt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Query" />
+
+                <ToggleButton
+                    android:id="@+id/set_tilt_ecare_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:textOff="Disable"
+                    android:textOn="Enable"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#3C3C36">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Motion alert settings"
+                android:textColor="#FFFFFF"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/set_motion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update" />
+
+                <Button
+                    android:id="@+id/query_motion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Query" />
+
+
+                <ToggleButton
+                    android:id="@+id/set_motion_ecare_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:textOff="Disable"
+                    android:textOn="Enable"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#3C3C36">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="NoMotion alert settings"
+                android:textColor="#FFFFFF"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/set_nomotion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update" />
+
+                <Button
+                    android:id="@+id/query_nomotion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Query" />
+
+
+                <ToggleButton
+                    android:id="@+id/set_nomotion_ecare_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:textOff="Disable"
+                    android:textOn="Enable"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#3C3C36">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="LED settings"
+                android:textColor="#FFFFFF"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/set_off_ecare_led"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="eCare Off" />
+
+                <Button
+                    android:id="@+id/set_led_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ON" />
+
+                <Button
+                    android:id="@+id/set_led_off_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#3C3C36">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Other settings"
+                android:textColor="#FFFFFF"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ToggleButton
+                    android:id="@+id/set_sos_ecare_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:textOff="SOS eCare Disable"
+                    android:textOn="SOS eCare Enable"/>
+
+                <ToggleButton
+                    android:id="@+id/set_test_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+            </LinearLayout>
+        </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

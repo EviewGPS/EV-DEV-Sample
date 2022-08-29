@@ -31,6 +31,8 @@ public class eCareServiceInterface {
     public static final int MSG_ALERT_NOMOTION_QUERY = 8;
     public static final int MSG_ECARE_LED_SWITCH_CTRL = 9;
     public static final int MSG_LED_SET = 10;
+    public static final int MSG_SET_VOLTE = 11;
+    public static final int MSG_ECARE_ALERT_SWITCH_CTRL = 12;
 
     private Context mContext;
     private Messenger mServerMessage;

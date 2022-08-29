@@ -2,7 +2,10 @@ package com.eview;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Message;
 import android.os.PowerManager;
+
+import com.eview.ecare.eCareServiceInterface;
 
 public class PhoneSystem {
     public static boolean shutdown(Context context) {
@@ -20,5 +23,11 @@ public class PhoneSystem {
                 .getSystemService(Context.POWER_SERVICE);
         pm.reboot("ecarefw");
         return true;
+    }
+
+    public static boolean setVolte(boolean enable) {
+        Message message = Message.obtain(null, eCareServiceInterface.MSG_SET_VOLTE);
+        message.arg1 = enable ? 1 : 0;
+        return eCareServiceInterface.getServiceInterface().sendMessage(message);
     }
 }

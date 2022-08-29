@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.eview.PhoneSystem;
 import com.eview.sample.AlertSample;
@@ -105,6 +107,14 @@ public class MainActivity extends Activity {
                 AlertSettings.queryFalldownSettings();
             }
         });
+        final ToggleButton switch_fall = (ToggleButton)findViewById(R.id.set_fall_ecare_en);
+        switch_fall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.setECareFallControl(switch_fall.isChecked());
+            }
+        });
+
 
         button = (Button)findViewById(R.id.set_tilt);
         button.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +128,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 AlertSettings.queryTiltSettings();
+            }
+        });
+        final ToggleButton switch_tilt = (ToggleButton)findViewById(R.id.set_tilt_ecare_en);
+        switch_tilt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.setECareTiltControl(switch_tilt.isChecked());
             }
         });
 
@@ -135,6 +152,13 @@ public class MainActivity extends Activity {
                 AlertSettings.queryMotionSettings();
             }
         });
+        final ToggleButton switch_motion = (ToggleButton)findViewById(R.id.set_motion_ecare_en);
+        switch_motion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.setECareMotionControl(switch_motion.isChecked());
+            }
+        });
 
         button = (Button)findViewById(R.id.set_nomotion);
         button.setOnClickListener(new View.OnClickListener() {
@@ -148,6 +172,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 AlertSettings.queryNoMotionSettings();
+            }
+        });
+        final ToggleButton switch_nomotion = (ToggleButton)findViewById(R.id.set_nomotion_ecare_en);
+        switch_nomotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.setECareNoMotionControl(switch_nomotion.isChecked());
             }
         });
 
@@ -165,6 +196,27 @@ public class MainActivity extends Activity {
                 LedSample.setLed(LedSample.LED_STATE_ON,LedSample.LED_STATE_ON,LedSample.LED_STATE_ON,LedSample.LED_BR_STATE_BR_DD);
             }
         });
+        button = (Button)findViewById(R.id.set_led_off_status);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LedSample.setLed(LedSample.LED_STATE_OFF,LedSample.LED_STATE_OFF,LedSample.LED_STATE_OFF,LedSample.LED_STATE_OFF);
+            }
+        });
+        final ToggleButton switch_sos = (ToggleButton)findViewById(R.id.set_sos_ecare_en);
+        switch_sos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertSettings.setECareSOSControl(switch_sos.isChecked());
+            }
+        });
+        final ToggleButton switch_test_en = (ToggleButton)findViewById(R.id.set_test_en);
+        switch_test_en.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
 
         pedoSample.start(this, (TextView)findViewById(R.id.txt_step_count));
         pedoSample.query();
