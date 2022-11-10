@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -16,7 +17,7 @@ import com.eview.PhoneSystem;
 import com.eview.sample.AlertSample;
 import com.eview.sample.AlertSettings;
 import com.eview.sample.ConnectionTrigger;
-import com.eview.sample.GestureSample;
+import com.eview.sample.UtilSample;
 import com.eview.sample.HrsSample;
 import com.eview.sample.KeySample;
 import com.eview.sample.LedSample;
@@ -83,14 +84,14 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GestureSample.setGesture(MainActivity.this, true);
+                UtilSample.setGesture(MainActivity.this, true);
             }
         });
         button = (Button)findViewById(R.id.disable_gesture);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GestureSample.setGesture(MainActivity.this, false);
+                UtilSample.setGesture(MainActivity.this, false);
             }
         });
         button = (Button)findViewById(R.id.set_falldown);
@@ -208,12 +209,21 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 AlertSettings.setECareSOSControl(switch_sos.isChecked());
+
+                Context mContext = eCareApplication.getContext();
+                Vibrator vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(VibrationEffect.createOneShot(500L, 60));//vibrate when set whitelist
             }
         });
         final ToggleButton switch_test_en = (ToggleButton)findViewById(R.id.set_test_en);
         switch_test_en.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(switch_test_en.isChecked()) {
+                    UtilSample.setVibratePackageName("com.eview.devsample");
+                } else {
+                    UtilSample.setVibratePackageName("");
+                }
             }
         });
 

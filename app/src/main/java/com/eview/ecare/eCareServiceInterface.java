@@ -33,6 +33,7 @@ public class eCareServiceInterface {
     public static final int MSG_LED_SET = 10;
     public static final int MSG_SET_VOLTE = 11;
     public static final int MSG_ECARE_ALERT_SWITCH_CTRL = 12;
+    public static final int MSG_SET_VIB_PACKAGENAME = 13;
 
     private Context mContext;
     private Messenger mServerMessage;
@@ -90,6 +91,9 @@ public class eCareServiceInterface {
                     break;
                 case MSG_LED_SET:
                     Log.d(TAG, "led set replay");
+                    break;
+                case MSG_SET_VIB_PACKAGENAME:
+                    Log.d(TAG, "set vib pkg replay");
                     break;
             }
         }

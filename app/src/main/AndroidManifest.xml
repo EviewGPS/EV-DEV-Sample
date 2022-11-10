@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sample.test"
-    android:versionCode="6"
-    android:versionName="1.6">
+    android:versionCode="7"
+    android:versionName="1.7">
 
     <uses-permission android:name="android.permission.SHUTDOWN"/>
     <uses-permission android:name="android.permission.REBOOT"/>
 
     <!--for step count permission start-->
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.eview.eCareShareDataProvider.read"/>
     <uses-permission android:name="com.eview.db.eCareProvider.readdb"/>
     <!--for step count permission end-->
