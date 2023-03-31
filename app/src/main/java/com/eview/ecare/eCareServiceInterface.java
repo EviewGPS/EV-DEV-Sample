@@ -34,6 +34,8 @@ public class eCareServiceInterface {
     public static final int MSG_SET_VOLTE = 11;
     public static final int MSG_ECARE_ALERT_SWITCH_CTRL = 12;
     public static final int MSG_SET_VIB_PACKAGENAME = 13;
+    public static final int MSG_ADD_WIFI_SCAN_THROTTLE = 14;
+    public static final int MSG_SET_DATASHIP_PACKAGENAME = 15;
 
     private Context mContext;
     private Messenger mServerMessage;
@@ -94,6 +96,12 @@ public class eCareServiceInterface {
                     break;
                 case MSG_SET_VIB_PACKAGENAME:
                     Log.d(TAG, "set vib pkg replay");
+                    break;
+                case MSG_ADD_WIFI_SCAN_THROTTLE:
+                    Log.d(TAG, "add wifi scan throttle replay");
+                    break;
+                case MSG_SET_DATASHIP_PACKAGENAME:
+                    Log.d(TAG, "add data shiping replay");
                     break;
             }
         }

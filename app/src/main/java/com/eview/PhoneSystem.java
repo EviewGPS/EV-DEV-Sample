@@ -2,6 +2,7 @@ package com.eview;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Message;
 import android.os.PowerManager;
 
@@ -28,6 +29,22 @@ public class PhoneSystem {
     public static boolean setVolte(boolean enable) {
         Message message = Message.obtain(null, eCareServiceInterface.MSG_SET_VOLTE);
         message.arg1 = enable ? 1 : 0;
+        return eCareServiceInterface.getServiceInterface().sendMessage(message);
+    }
+
+    public static boolean addWifiBackgroundWhitelist(String pkgName) {
+        Message message = Message.obtain(null, eCareServiceInterface.MSG_ADD_WIFI_SCAN_THROTTLE);
+        Bundle bundle = new Bundle();
+        bundle.putString("pkgName", pkgName);
+        message.setData(bundle);
+        return eCareServiceInterface.getServiceInterface().sendMessage(message);
+    }
+
+    public static boolean addDataShipWhitelist(String pkgName) {
+        Message message = Message.obtain(null, eCareServiceInterface.MSG_SET_DATASHIP_PACKAGENAME);
+        Bundle bundle = new Bundle();
+        bundle.putString("pkgName", pkgName);
+        message.setData(bundle);
         return eCareServiceInterface.getServiceInterface().sendMessage(message);
     }
 }
