@@ -47,4 +47,18 @@ public class PhoneSystem {
         message.setData(bundle);
         return eCareServiceInterface.getServiceInterface().sendMessage(message);
     }
+
+    /*
+     0:(234);
+     1:(23);
+     2:2G
+     3:3G
+     4:4G
+     5:3G/4G
+    * */
+    public static boolean setPreferNetworkType(int type) {
+        Message message = Message.obtain(null, eCareServiceInterface.MSG_SET_NETWORK_PREFERRED_TYPE);
+        message.arg1 = type;
+        return eCareServiceInterface.getServiceInterface().sendMessage(message);
+    }
 }
