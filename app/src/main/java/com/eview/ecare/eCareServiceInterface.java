@@ -38,6 +38,8 @@ public class eCareServiceInterface {
     public static final int MSG_SET_DATASHIP_PACKAGENAME = 15;
     public static final int MSG_SET_NETWORK_PREFERRED_TYPE = 16;
 
+    public static final int MSG_ECARE_VIB_SWITCH_CTRL = 17;
+
     private Context mContext;
     private Messenger mServerMessage;
     private List<eCareServiceListener> mFwServiceListener = new ArrayList<>();

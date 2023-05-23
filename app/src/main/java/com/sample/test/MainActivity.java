@@ -22,6 +22,7 @@ import com.eview.sample.HrsSample;
 import com.eview.sample.KeySample;
 import com.eview.sample.LedSample;
 import com.eview.sample.PedoSample;
+import com.eview.sample.VibrateSample;
 
 public class MainActivity extends Activity {
     public static final String TAG = "MainActivity";
@@ -204,6 +205,8 @@ public class MainActivity extends Activity {
                 LedSample.setLed(LedSample.LED_STATE_OFF,LedSample.LED_STATE_OFF,LedSample.LED_STATE_OFF,LedSample.LED_STATE_OFF);
             }
         });
+        findViewById(R.id.set_vib_on_status).setOnClickListener(view -> VibrateSample.setECareControl(true));
+        findViewById(R.id.set_vib_off_status).setOnClickListener(view -> VibrateSample.setECareControl(false));
         final ToggleButton switch_sos = (ToggleButton)findViewById(R.id.set_sos_ecare_en);
         switch_sos.setOnClickListener(new View.OnClickListener() {
             @Override
