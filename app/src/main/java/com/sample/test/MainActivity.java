@@ -17,6 +17,7 @@ import com.eview.PhoneSystem;
 import com.eview.sample.AlertSample;
 import com.eview.sample.AlertSettings;
 import com.eview.sample.ConnectionTrigger;
+import com.eview.sample.RaiseHandSample;
 import com.eview.sample.UtilSample;
 import com.eview.sample.HrsSample;
 import com.eview.sample.KeySample;
@@ -207,6 +208,9 @@ public class MainActivity extends Activity {
         });
         findViewById(R.id.set_vib_on_status).setOnClickListener(view -> VibrateSample.setECareControl(true));
         findViewById(R.id.set_vib_off_status).setOnClickListener(view -> VibrateSample.setECareControl(false));
+
+        findViewById(R.id.set_raise_hand_on_status).setOnClickListener(view -> RaiseHandSample.setECareRaiseHandControl(true));
+        findViewById(R.id.set_raise_hand_off_status).setOnClickListener(view -> RaiseHandSample.setECareRaiseHandControl(false));
         final ToggleButton switch_sos = (ToggleButton)findViewById(R.id.set_sos_ecare_en);
         switch_sos.setOnClickListener(new View.OnClickListener() {
             @Override

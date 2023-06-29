@@ -40,6 +40,8 @@ public class eCareServiceInterface {
 
     public static final int MSG_ECARE_VIB_SWITCH_CTRL = 17;
 
+    public static final int MSG_ECARE_RAISE_HAND_CTRL = 18;
+
     private Context mContext;
     private Messenger mServerMessage;
     private List<eCareServiceListener> mFwServiceListener = new ArrayList<>();
@@ -108,6 +110,9 @@ public class eCareServiceInterface {
                     break;
                 case MSG_SET_NETWORK_PREFERRED_TYPE:
                     Log.d(TAG, "set network prefer replay");
+                    break;
+                case MSG_ECARE_RAISE_HAND_CTRL:
+                    Log.d(TAG, "set Raise hand replay");
                     break;
             }
         }
