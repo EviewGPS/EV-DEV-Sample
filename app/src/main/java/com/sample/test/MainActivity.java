@@ -211,6 +211,9 @@ public class MainActivity extends Activity {
 
         findViewById(R.id.set_raise_hand_on_status).setOnClickListener(view -> RaiseHandSample.setECareRaiseHandControl(true));
         findViewById(R.id.set_raise_hand_off_status).setOnClickListener(view -> RaiseHandSample.setECareRaiseHandControl(false));
+        findViewById(R.id.set_ring_volume).setOnClickListener(view -> PhoneSystem.setVolume(0,90));
+        findViewById(R.id.set_speaker_volume).setOnClickListener(view ->PhoneSystem.setVolume(1,80));
+        findViewById(R.id.set_voice_volume).setOnClickListener(view -> PhoneSystem.setVolume(3,60));
         final ToggleButton switch_sos = (ToggleButton)findViewById(R.id.set_sos_ecare_en);
         switch_sos.setOnClickListener(new View.OnClickListener() {
             @Override

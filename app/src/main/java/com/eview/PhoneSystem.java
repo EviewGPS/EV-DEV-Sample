@@ -2,6 +2,7 @@ package com.eview;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Message;
 import android.os.PowerManager;
@@ -61,4 +62,22 @@ public class PhoneSystem {
         message.arg1 = type;
         return eCareServiceInterface.getServiceInterface().sendMessage(message);
     }
+
+    /**
+     *
+     * @param type
+     * 0:RingVolume
+     * 1:SpeakerVolume
+     * 3:VoiceVolume
+     * @param volume
+     * @return
+     */
+    public static boolean setVolume(int type,int volume){
+        Message message = Message.obtain(null, eCareServiceInterface.MSG_ECARE_VOLUME_CTRL);
+        message.arg1 = type;
+        message.arg2 = volume;
+        return eCareServiceInterface.getServiceInterface().sendMessage(message);
+    }
+
+
 }
