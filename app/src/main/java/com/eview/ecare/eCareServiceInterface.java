@@ -13,6 +13,7 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
 
+import com.eview.sample.MotionSample;
 import com.sample.test.eCareApplication;
 
 import java.util.ArrayList;
@@ -43,6 +44,12 @@ public class eCareServiceInterface {
     public static final int MSG_ECARE_RAISE_HAND_CTRL = 18;
 
     public static final int MSG_ECARE_VOLUME_CTRL = 19;
+
+    public static final int MSG_ECARE_REGISTER_MOTION = 20;
+
+    public static final int MSG_ECARE_RECEIVE_MOTION = 21;
+
+    public static final int MSG_ECARE_QUERY_MOTION = 22;
     private Context mContext;
     private Messenger mServerMessage;
     private List<eCareServiceListener> mFwServiceListener = new ArrayList<>();
@@ -118,6 +125,21 @@ public class eCareServiceInterface {
                 case MSG_ECARE_VOLUME_CTRL:
                     Log.d(TAG, "set  Volume replay");
                     break;
+                case MSG_ECARE_REGISTER_MOTION:{
+                    Log.i(TAG,"register motion");
+                    break;
+                }
+                case MSG_ECARE_RECEIVE_MOTION:{
+                    int motion = bundle.getInt("motion",-1);
+                    MotionSample.getInstance().receiveMotionState(motion);
+                    break;
+                }
+                case MSG_ECARE_QUERY_MOTION:{
+                    boolean motion = bundle.getBoolean("motion_state");
+                    MotionSample.getInstance().motionStateResult(motion);
+                    break;
+                }
+
             }
         }
     });
